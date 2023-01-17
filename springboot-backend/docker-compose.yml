@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mysqldb:
+    image: mysql:latest
+    container_name: mysqldb
+    ports:
+     - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: employee_management_system
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  springboot-backend:
+    image: springboot-backend-v7
+    container_name: springboot-backend
+    restart: always
+    ports:
+     - 8080:8080
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+     - mysqldb
+    links:
+     - mysqldb
+     
+volumes:
+  mysql-data:

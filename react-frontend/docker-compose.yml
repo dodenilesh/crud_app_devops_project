@@ -1,0 +1,10 @@
+version: '3'
+services:
+  react-frontend:
+    image: react-frontend-v6
+    restart: always
+    build: ./ 
+    ports:
+     - 3000:3000
+    stdin_open: true
+
