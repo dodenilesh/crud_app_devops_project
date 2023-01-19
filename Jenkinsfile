@@ -27,11 +27,12 @@ pipeline {
         stage('Build images of both app') {
             steps {
                 dir('springboot-backend') {
-                  sh 'sudo docker build -t springboot-backend:$BUILD_NUMBER . '
+		  sh 'whoami'
+                  sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
                 }
                 
                 dir('react-frontend') {
-                  sh 'sudo docker build -t react-frontend:$BUILD_NUMBER . '
+                  sh 'docker build -t react-frontend:$BUILD_NUMBER . '
                 }
                 
             }
