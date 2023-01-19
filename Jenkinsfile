@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'master' }
     environment{
         dockerhub_credentials=credentials('DOCKERHUB_CREDS')
 		github_credentials=credentials('GITHUB_CREDS')
