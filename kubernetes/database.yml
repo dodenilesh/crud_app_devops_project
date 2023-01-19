@@ -22,9 +22,9 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: kemane
+          value: admin
         - name: MYSQL_DATABASE
-          value: crud
+          value: password
 
 
 ---
