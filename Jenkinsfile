@@ -10,7 +10,7 @@ pipeline {
     stages {  
 	stage("Git Clone"){
 	    steps {
-		git credentialsId: github_credentials, url: 'https://github.com/dodenilesh/reactjs-springboot-crud-app.git'
+		git credentialsId: github_credentials, url: 'https://github.com/dodenilesh/crud_app_devops_project.git'
 		}
             }	
         stage('Build & Package spring app') {
