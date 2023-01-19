@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'master' }
-    tools { maven '3.6.3' }
+    
     environment{
         dockerhub_credentials=credentials('DOCKERHUB_CREDS')
 		github_credentials=credentials('GITHUB_CREDS')
