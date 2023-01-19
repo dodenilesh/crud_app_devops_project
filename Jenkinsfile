@@ -3,7 +3,7 @@ pipeline {
      agent { label 'master' }
     
     environment{
-        dockerhub_credentials=credentials('DOCKERHUB_CREDS')
+        	dockerhub_credentials=credentials('DOCKERHUB_CREDS')
 		github_credentials=credentials('GITHUB_CREDS')
 		k8s_credentials=credentials('K8S_MASTER_CREDS')			
     }
