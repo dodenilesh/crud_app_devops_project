@@ -13,6 +13,7 @@ sleep 10
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -a -G docker ubuntu
+sudo usermod -a -G docker jenkins
 
 #Python installation
 sudo apt install software-properties-common
