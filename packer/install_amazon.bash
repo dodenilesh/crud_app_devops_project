@@ -19,7 +19,7 @@ sudo usermod -a -G docker jenkins
 sudo apt install software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 
-sudo apt install -y python3.9 python3-pip jq unzip vim tree netcat-traditional xmlstarlet git make nodejs openjdk-17-jre-headless maven docker-compose
+sudo apt install -y python3.9 python3-pip jq unzip vim tree netcat-traditional xmlstarlet git make nodejs openjdk-17-jre-headless maven docker-compose ansible-core
 
 
 sudo npm install -g create-react-app
