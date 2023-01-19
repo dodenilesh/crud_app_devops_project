@@ -60,7 +60,7 @@ pipeline {
                      sed -i "s/docker_tag/$final_tag/g" frontend.yml
                     '''
                 }
-                dir('ansible') {                  
+                dir('ansible_k8s') {                  
                   ansiblePlaybook become: true, credentialsId: 'k8s_credentials', installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
                 }
             }
