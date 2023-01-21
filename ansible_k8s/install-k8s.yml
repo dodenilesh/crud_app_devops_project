@@ -30,8 +30,6 @@
        file:
          path: "/etc/sysctl.d/99-kubernetes-cri.conf"
          state: "touch"
-tc/sysctl.d/99-kubernetes-cri.conf"
-         state: "touch"
 
      - name: Add conf for containerd
        blockinfile:
