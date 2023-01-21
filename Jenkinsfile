@@ -59,8 +59,9 @@ pipeline {
                     '''
                 }
                 dir('ansible_k8s') {  
-		  //sh 'ansible k8s_workers -m ping'
-		  sh 'ansible-playbook deploy-playbook.yml'
+		   sh 'chmod 600 ../other_files/jenkins_server'
+		   sh 'ansible k8s_workers -m ping'
+		  //sh 'ansible-playbook deploy-playbook.yml'
                   //ansiblePlaybook become: true, credentialsId: 'k8s_credentials', installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
                 }
             }
