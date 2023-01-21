@@ -8,7 +8,6 @@ pipeline {
 		k8s_credentials=credentials('K8S_MASTER_CREDS')			
     }
 	
-
     stages {  
 	stage("Git Clone"){
 	    steps {
@@ -61,7 +60,8 @@ pipeline {
                     '''
                 }
                 dir('ansible_k8s') {  
-		  sh 'ansible-playbook deploy-playbook.yml'
+		   sh 'ansible k8s_workers -m ping'
+		  //sh 'ansible-playbook deploy-playbook.yml'
                   //ansiblePlaybook become: true, credentialsId: 'k8s_credentials', installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
                 }
             }
