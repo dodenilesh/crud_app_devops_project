@@ -26,7 +26,6 @@ pipeline {
         stage('Build images of both app') {
             steps {
                 dir('springboot-backend') {
-		  sh 'whoami'
                   sh 'docker build -t springboot-backend:$BUILD_NUMBER . '
                 }
                 
@@ -60,8 +59,8 @@ pipeline {
                     '''
                 }
                 dir('ansible_k8s') {  
-		   sh 'ansible k8s_workers -m ping'
-		  //sh 'ansible-playbook deploy-playbook.yml'
+		  //sh 'ansible k8s_workers -m ping'
+		  sh 'ansible-playbook deploy-playbook.yml'
                   //ansiblePlaybook become: true, credentialsId: 'k8s_credentials', installation: 'ansible', inventory: 'hosts', playbook: 'deploy-playbook.yml'
                 }
             }
