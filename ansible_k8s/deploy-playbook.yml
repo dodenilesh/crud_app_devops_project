@@ -6,14 +6,14 @@
   - name: copy docker composer file to node
     copy: 
       src: ../kubernetes/
-      dest: /root/kubernetes/
-    become: yes
+      dest: ~/kubernetes/
+    #become: yes
 
   - name: deploy the database
-    command: "sudo kubectl apply -f /root/kubernetes/database.yml"
+    command: "kubectl apply -f /root/kubernetes/database.yml"
 
   - name: deploy the backend app
-    command: "sudo kubectl apply -f /root/kubernetes/backend.yml"
+    command: "kubectl apply -f /root/kubernetes/backend.yml"
 
   - name: deploy the frontend app
-    command: "sudo kubectl apply -f /root/kubernetes/frontend.yml"
+    command: "kubectl apply -f /root/kubernetes/frontend.yml"
